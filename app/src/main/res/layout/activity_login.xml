@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.LoginActivity">
+
+
+    <ImageView
+        android:id="@+id/logoParceiroMagalu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHeight_max="250dp"
+        android:layout_margin="30dp"
+        app:srcCompat="@drawable/parceiro_magalu_jpeg" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textFieldEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_email"
+        android:layout_margin="25dp"
+        app:layout_constraintTop_toBottomOf="@+id/logoParceiroMagalu"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:inputType="textEmailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textFieldSenha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_senha"
+        android:layout_margin="25dp"
+        app:layout_constraintTop_toBottomOf="@+id/textFieldEmail"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/esqueciSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/esqueci_senha"
+        android:textColor="#1976D2"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/textFieldSenha"
+        app:layout_constraintTop_toBottomOf="@+id/textFieldSenha" />
+
+    <Button
+        android:id="@+id/buttonEntrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="#1976D2"
+        android:paddingHorizontal="80dp"
+        android:paddingVertical="15dp"
+        android:text="@string/login_button"
+        app:cornerRadius="50dp"
+        app:layout_constraintEnd_toEndOf="@+id/textFieldSenha"
+        app:layout_constraintStart_toStartOf="@+id/textFieldSenha"
+        app:layout_constraintTop_toBottomOf="@+id/esqueciSenha" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

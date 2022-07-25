@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Agente Parceiro Magalu</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="hint_email">E-mail</string>
+    <string name="esqueci_senha">Esqueci minha senha.</string>
+    <string name="login_button">Entrar</string>
+    <string name="hint_senha">Senha</string>
+    <string name="texto_esqueci_senha">Insira o e-mail da sua conta para alterar a senha. Será enviado um e-mail com um código de 6 dígitos.</string>
+    <string name="agenda_visitas">Agenda de visitas</string>
+    <string name="button_agenda">Agenda de visitas</string>
+    <string name="button_hunting">Hunting</string>
+    <string name="button_visitas_realizadas">Visitas Realizadas</string>
+    <string name="description_icon_item">Icone de loja</string>
+</resources>
