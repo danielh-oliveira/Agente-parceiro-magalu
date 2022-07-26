@@ -42,6 +42,9 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        //TODO remover SA está abaixo apenas para teste
+        startActivity(Intent(this, DetalhesAgendamentoActivity::class.java))
+
     }
 
     private fun vaiParaLogin() {

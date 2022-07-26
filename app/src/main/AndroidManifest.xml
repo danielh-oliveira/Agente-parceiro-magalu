@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="br.com.daniel.agenteparceiromagalu">
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -14,6 +16,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AgenteParceiroMagalu"
         tools:targetApi="31">
+        <activity
+            android:name=".ui.ChecklistActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.DetalhesAgendamentoActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.AgendaVisitasActivity"
             android:exported="false" />

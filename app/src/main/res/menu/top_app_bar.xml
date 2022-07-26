@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/item_menu_filtro"
+        android:icon="@drawable/ic_filter_white"
+        android:title="@string/filtro"
+        android:contentDescription="@string/content_description_filtro"
+        app:showAsAction="ifRoom" />
+
+
+    <item
+        android:id="@+id/item_menu_adicionar"
+        android:icon="@drawable/ic_adicionar"
+        android:title="@string/adicionar"
+        android:contentDescription="@string/content_description_add"
+        app:showAsAction="ifRoom" />
+
+</menu>
+
+<!--Essa item é caso eu queira colapsar todos em ... -->
+
+<!--<item-->
+<!--android:id="@+id/more"-->
+<!--android:title="@string/more"-->
+<!--android:contentDescription="@string/content_description_more"-->
+<!--app:showAsAction="never" />-->

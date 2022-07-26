@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.daniel.agenteparceiromagalu.R
-import br.com.daniel.agenteparceiromagalu.models.Loja
+import br.com.daniel.agenteparceiromagalu.model.Loja
 
 class AgendaVisitasAdapter(
     private val visitasAgendadas: List<Loja>

@@ -1,4 +1,4 @@
-package br.com.daniel.agenteparceiromagalu.models
+package br.com.daniel.agenteparceiromagalu.model
 
 data class Loja(
     private val id: Int = 0,

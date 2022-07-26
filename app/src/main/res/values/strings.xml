@@ -19,4 +19,13 @@
     <string name="button_hunting">Hunting</string>
     <string name="button_visitas_realizadas">Visitas Realizadas</string>
     <string name="description_icon_item">Icone de loja</string>
+    <string name="adicionar">Adicionar agendamento</string>
+    <string name="content_description_add">Adiciona uma nova visita na lista</string>
+    <string name="filtro">Filtrar visitas</string>
+    <string name="content_description_filtro">Filtra todas as visitas</string>
+    <string name="content_description_mapa">Mapa com o endereço do local</string>
+    <string name="button_checklist">Abrir checklist</string>
+    <string name="button_deletar">Deletar</string>
+    <string name="button_ligar">Chamar</string>
+    <string name="call_error">Não foi possível iniciar telefone</string>
 </resources>

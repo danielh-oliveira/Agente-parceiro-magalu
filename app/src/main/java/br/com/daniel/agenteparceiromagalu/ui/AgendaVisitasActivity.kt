@@ -2,14 +2,14 @@ package br.com.daniel.agenteparceiromagalu.ui
 
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import br.com.daniel.agenteparceiromagalu.R
 import br.com.daniel.agenteparceiromagalu.adapter.AgendaVisitasAdapter
 import br.com.daniel.agenteparceiromagalu.databinding.ActivityAgendaVisitasBinding
-import br.com.daniel.agenteparceiromagalu.models.Loja
-import br.com.daniel.agenteparceiromagalu.models.Tags
+import br.com.daniel.agenteparceiromagalu.model.Loja
+import br.com.daniel.agenteparceiromagalu.model.Tags
 import java.time.LocalDateTime
 
 class AgendaVisitasActivity : AppCompatActivity() {
@@ -20,16 +20,37 @@ class AgendaVisitasActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        binding.buttonBackToMain.setOnClickListener {
+//        ---------- inicio Configura appbar quando terminar extrair para função
+
+        binding.topAppBarAgenda.setNavigationOnClickListener {
             finish()
         }
+
+        binding.topAppBarAgenda.setOnMenuItemClickListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.item_menu_adicionar -> {
+                    //TODO comportamento de adicionar
+
+
+                    true
+                }
+                R.id.item_menu_filtro -> {
+                    //TODO comportamento de filtro
+
+                    true
+                }
+                else -> false
+            }
+        }
+
+        //        ---------- final Configura appbar quando terminar extrair para função
 
         val listaLojas = createFakeData()
 
         binding.rvAgenda.adapter = AgendaVisitasAdapter(listaLojas)
     }
 
-
+    //TODO resolver essa anotation
     @RequiresApi(Build.VERSION_CODES.O)
     private fun createFakeData(): List<Loja> {
         val lista = mutableListOf<Loja>(
