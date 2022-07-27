@@ -10,6 +10,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import br.com.daniel.agenteparceiromagalu.R
 import br.com.daniel.agenteparceiromagalu.databinding.ActivityDetalheAgendamentoBinding
+import br.com.daniel.agenteparceiromagalu.model.Loja
 
 class DetalhesAgendamentoActivity : AppCompatActivity() {
 
@@ -20,8 +21,14 @@ class DetalhesAgendamentoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        val position = intent.getIntExtra("POSICAO", -1).also {
+            if (it == -1) {
+                finish()
+            }
+        }
+
         configuraButtonNavigation()
-        configuraCamposTexto()
+        configuraCamposTexto(position)
         configuraActivityButtons()
     }
 
@@ -41,8 +48,8 @@ class DetalhesAgendamentoActivity : AppCompatActivity() {
             * ligação então usando o resolveActivity na sua intent faz
             * verificar se possui */
         val intentTelefone = Intent(Intent.ACTION_DIAL).apply {
-            //TODO Colocar a variavel com o numero aqui seguindo o mesmo formato
-            data = Uri.parse("tel:21999999999")
+            val telefone = detalhesAgendViewModel.getChamada()
+            data = Uri.parse("tel:$telefone")
         }
         if (intentTelefone.resolveActivity(packageManager) != null) {
             startActivity(intentTelefone)
@@ -51,7 +58,9 @@ class DetalhesAgendamentoActivity : AppCompatActivity() {
         }
     }
 
-    private fun configuraCamposTexto() {
+    private fun configuraCamposTexto(position: Int) {
+        val loja: Loja = detalhesAgendViewModel.getDetalhes(position)
+
         binding.nomeLojaDetalhe.text = detalhesAgendViewModel.nomeLoja()
         binding.dataDetalhe.text = detalhesAgendViewModel.dataAgendada()
         binding.horaDetalhe.text = detalhesAgendViewModel.horaAgendada()

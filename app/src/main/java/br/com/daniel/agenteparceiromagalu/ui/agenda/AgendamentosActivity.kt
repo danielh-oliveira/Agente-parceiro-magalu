@@ -1,5 +1,6 @@
 package br.com.daniel.agenteparceiromagalu.ui.agenda
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,17 +8,12 @@ import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
-import androidx.lifecycle.asLiveData
 import br.com.daniel.agenteparceiromagalu.R
 import br.com.daniel.agenteparceiromagalu.adapter.AgendaVisitasAdapter
 import br.com.daniel.agenteparceiromagalu.databinding.ActivityAgendamentoBinding
 import br.com.daniel.agenteparceiromagalu.model.Loja
-import br.com.daniel.agenteparceiromagalu.model.Tags
-import br.com.daniel.agenteparceiromagalu.repository.Repositorio
-import kotlinx.coroutines.flow.asFlow
-import java.time.LocalDateTime
 
-class AgendamentosActivity : AppCompatActivity() {
+class AgendamentosActivity : AppCompatActivity(), RecyclerViewInterface {
     private val binding by lazy { ActivityAgendamentoBinding.inflate(LayoutInflater.from(this)) }
     private val agendamentoViewModel: AgendamentosViewModel by viewModels()
 
@@ -53,8 +49,14 @@ class AgendamentosActivity : AppCompatActivity() {
         //  ---------- inicio configura adapter com livedata
         val listaLojasLivedata = agendamentoViewModel.createFakeData()
         listaLojasLivedata.observe(this, Observer {
-            binding.rvAgenda.adapter = AgendaVisitasAdapter(it)
+            binding.rvAgenda.adapter = AgendaVisitasAdapter(it, this)
         })
         //  ---------- final configura adapter com livedata
+    }
+
+    override fun onItemClick(position: Int) {
+        Intent(this, DetalhesAgendamentoActivity::class.java).apply {
+            putExtra("POSICAO", position)
+        }.let { startActivity(it) }
     }
 }
