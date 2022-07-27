@@ -1,19 +1,25 @@
-package br.com.daniel.agenteparceiromagalu.ui
+package br.com.daniel.agenteparceiromagalu.ui.agenda
 
 import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
+import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
+import androidx.lifecycle.asLiveData
 import br.com.daniel.agenteparceiromagalu.R
 import br.com.daniel.agenteparceiromagalu.adapter.AgendaVisitasAdapter
-import br.com.daniel.agenteparceiromagalu.databinding.ActivityAgendaVisitasBinding
+import br.com.daniel.agenteparceiromagalu.databinding.ActivityAgendamentoBinding
 import br.com.daniel.agenteparceiromagalu.model.Loja
 import br.com.daniel.agenteparceiromagalu.model.Tags
+import br.com.daniel.agenteparceiromagalu.repository.Repositorio
+import kotlinx.coroutines.flow.asFlow
 import java.time.LocalDateTime
 
-class AgendaVisitasActivity : AppCompatActivity() {
-    private val binding by lazy { ActivityAgendaVisitasBinding.inflate(LayoutInflater.from(this)) }
+class AgendamentosActivity : AppCompatActivity() {
+    private val binding by lazy { ActivityAgendamentoBinding.inflate(LayoutInflater.from(this)) }
+    private val agendamentoViewModel: AgendamentosViewModel by viewModels()
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,7 +37,6 @@ class AgendaVisitasActivity : AppCompatActivity() {
                 R.id.item_menu_adicionar -> {
                     //TODO comportamento de adicionar
 
-
                     true
                 }
                 R.id.item_menu_filtro -> {
@@ -43,24 +48,13 @@ class AgendaVisitasActivity : AppCompatActivity() {
             }
         }
 
-        //        ---------- final Configura appbar quando terminar extrair para função
+        //  ---------- final Configura appbar quando terminar extrair para função
 
-        val listaLojas = createFakeData()
-
-        binding.rvAgenda.adapter = AgendaVisitasAdapter(listaLojas)
-    }
-
-    //TODO resolver essa anotation
-    @RequiresApi(Build.VERSION_CODES.O)
-    private fun createFakeData(): List<Loja> {
-        val lista = mutableListOf<Loja>(
-            Loja(nome = "Casas Bahia", date = LocalDateTime.now().toString(), tag = Tags.Eletronicos),
-            Loja(nome = "Itau", date = LocalDateTime.now().toString()),
-            Loja(nome = "Casas Cleide", date = LocalDateTime.now().toString()),
-            Loja(nome = "Moveis Bahia", date = LocalDateTime.now().toString(), tag = Tags.Departamento),
-            Loja(nome = "Saraiva", date = LocalDateTime.now().toString(), tag = Tags.Livraria),
-            Loja(nome = "Outbeco", date = LocalDateTime.now().toString())
-        )
-        return lista
+        //  ---------- inicio configura adapter com livedata
+        val listaLojasLivedata = agendamentoViewModel.createFakeData()
+        listaLojasLivedata.observe(this, Observer {
+            binding.rvAgenda.adapter = AgendaVisitasAdapter(it)
+        })
+        //  ---------- final configura adapter com livedata
     }
 }

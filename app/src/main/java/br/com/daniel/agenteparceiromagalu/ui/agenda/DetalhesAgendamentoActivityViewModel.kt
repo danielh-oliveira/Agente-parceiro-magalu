@@ -1,7 +1,8 @@
-package br.com.daniel.agenteparceiromagalu.ui
+package br.com.daniel.agenteparceiromagalu.ui.agenda
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
+import br.com.daniel.agenteparceiromagalu.model.Loja
 
 class DetalhesAgendamentoActivityViewModel : ViewModel() {
     fun nomeLoja(): String {

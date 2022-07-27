@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.datastore.preferences.core.edit
 import androidx.lifecycle.lifecycleScope
 import br.com.daniel.agenteparceiromagalu.databinding.ActivityMainBinding
+import br.com.daniel.agenteparceiromagalu.ui.agenda.AgendamentosActivity
 import br.com.daniel.agenteparceiromagalu.util.dataStore
 import br.com.daniel.agenteparceiromagalu.util.usuarioLogadoPreferences
 import kotlinx.coroutines.launch
@@ -20,10 +21,19 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        binding.buttonAgendaVisita.setOnClickListener {
-            startActivity(Intent(this, AgendaVisitasActivity::class.java))
-        }
+        configuraLogin()
+        configuraBotoes()
 
+
+    }
+
+    private fun configuraBotoes() {
+        binding.buttonAgendaVisita.setOnClickListener {
+            startActivity(Intent(this, AgendamentosActivity::class.java))
+        }
+    }
+
+    private fun configuraLogin() {
         binding.opcoes.setOnClickListener {
             lifecycleScope.launch {
                 dataStore.edit { preferences ->
@@ -41,10 +51,6 @@ class MainActivity : AppCompatActivity() {
                 } ?: vaiParaLogin()
             }
         }
-
-        //TODO remover SA está abaixo apenas para teste
-        startActivity(Intent(this, DetalhesAgendamentoActivity::class.java))
-
     }
 
     private fun vaiParaLogin() {

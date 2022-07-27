@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
+    app:cardBackgroundColor="#F6FFFE"
     app:cardElevation="0dp"
     app:strokeColor="#39106C"
     app:strokeWidth="1dp">
@@ -32,10 +33,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
+            android:ellipsize="end"
+            android:maxLength="17"
+            android:singleLine="true"
             android:textAppearance="?attr/textAppearanceHeadline6"
             app:layout_constraintStart_toEndOf="@+id/imageView"
             app:layout_constraintTop_toTopOf="@+id/imageView"
-            tools:text="Nome da Loja" />
+            tools:text="Nome da Lojaaaaaaaaaaaaaaaa aaaaaaa" />
 
         <TextView
             android:id="@+id/diaMesHoraItem"

@@ -17,13 +17,13 @@
         android:theme="@style/Theme.AgenteParceiroMagalu"
         tools:targetApi="31">
         <activity
-            android:name=".ui.ChecklistActivity"
+            android:name=".ui.agenda.ChecklistActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.DetalhesAgendamentoActivity"
+            android:name=".ui.agenda.DetalhesAgendamentoActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.AgendaVisitasActivity"
+            android:name=".ui.agenda.AgendamentosActivity"
             android:exported="false" />
         <activity
             android:name=".ui.LoginActivity"

@@ -1,4 +1,4 @@
-package br.com.daniel.agenteparceiromagalu.ui
+package br.com.daniel.agenteparceiromagalu.ui.agenda
 
 import android.os.Bundle
 import android.view.LayoutInflater
