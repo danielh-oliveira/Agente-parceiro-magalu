@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:navigationIcon="@drawable/ic_baseline_back_white"
-            app:title="Detalhes agendamento" />
+            app:title="@string/topbar_title_agendamento" />
 
         <!--        TODO colocar icone no appbar de deletat-->
 

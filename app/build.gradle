@@ -37,6 +37,8 @@ android {
 }
 
 dependencies {
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
 
     // Kotlin annotation processing tool (kapt)
     kapt 'androidx.room:room-compiler:2.4.2'

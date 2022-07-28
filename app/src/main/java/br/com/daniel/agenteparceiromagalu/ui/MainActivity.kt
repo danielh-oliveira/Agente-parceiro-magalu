@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.datastore.preferences.core.edit
 import androidx.lifecycle.lifecycleScope
 import br.com.daniel.agenteparceiromagalu.databinding.ActivityMainBinding
+import br.com.daniel.agenteparceiromagalu.ui.agenda.AdicionaAgendamentoActivity
 import br.com.daniel.agenteparceiromagalu.ui.agenda.AgendamentosActivity
 import br.com.daniel.agenteparceiromagalu.util.dataStore
 import br.com.daniel.agenteparceiromagalu.util.usuarioLogadoPreferences
@@ -23,8 +24,6 @@ class MainActivity : AppCompatActivity() {
 
         configuraLogin()
         configuraBotoes()
-
-
     }
 
     private fun configuraBotoes() {

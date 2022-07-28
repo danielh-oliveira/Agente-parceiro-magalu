@@ -17,6 +17,9 @@
         android:theme="@style/Theme.AgenteParceiroMagalu"
         tools:targetApi="31">
         <activity
+            android:name=".ui.agenda.AdicionaAgendamentoActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.agenda.ChecklistActivity"
             android:exported="false" />
         <activity

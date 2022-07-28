@@ -40,4 +40,8 @@ class Repositorio {
         return lista[position]
     }
 
+    fun adiciona(loja: Loja) {
+        lista.add(loja)
+    }
+
 }

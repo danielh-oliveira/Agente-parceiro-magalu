@@ -1,4 +1,4 @@
-package br.com.daniel.agenteparceiromagalu.adapter
+package br.com.daniel.agenteparceiromagalu.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,7 +7,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.daniel.agenteparceiromagalu.R
 import br.com.daniel.agenteparceiromagalu.model.Loja
-import br.com.daniel.agenteparceiromagalu.ui.agenda.RecyclerViewInterface
 
 class AgendaVisitasAdapter(
     private val visitasAgendadas: List<Loja>,

@@ -1,4 +1,4 @@
-package br.com.daniel.agenteparceiromagalu.ui.agenda
+package br.com.daniel.agenteparceiromagalu.ui.adapter
 
 import br.com.daniel.agenteparceiromagalu.model.Loja
 

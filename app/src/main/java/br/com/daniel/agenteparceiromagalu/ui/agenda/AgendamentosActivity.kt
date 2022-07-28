@@ -1,17 +1,19 @@
 package br.com.daniel.agenteparceiromagalu.ui.agenda
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import br.com.daniel.agenteparceiromagalu.R
-import br.com.daniel.agenteparceiromagalu.adapter.AgendaVisitasAdapter
+import br.com.daniel.agenteparceiromagalu.ui.adapter.AgendaVisitasAdapter
 import br.com.daniel.agenteparceiromagalu.databinding.ActivityAgendamentoBinding
-import br.com.daniel.agenteparceiromagalu.model.Loja
+import br.com.daniel.agenteparceiromagalu.ui.adapter.RecyclerViewInterface
 
 class AgendamentosActivity : AppCompatActivity(), RecyclerViewInterface {
     private val binding by lazy { ActivityAgendamentoBinding.inflate(LayoutInflater.from(this)) }
@@ -31,13 +33,11 @@ class AgendamentosActivity : AppCompatActivity(), RecyclerViewInterface {
         binding.topAppBarAgenda.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.item_menu_adicionar -> {
-                    //TODO comportamento de adicionar
-
+                    startActivity(Intent(this, AdicionaAgendamentoActivity::class.java))
                     true
                 }
                 R.id.item_menu_filtro -> {
                     //TODO comportamento de filtro
-
                     true
                 }
                 else -> false

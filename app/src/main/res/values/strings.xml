@@ -28,4 +28,7 @@
     <string name="button_deletar">Deletar</string>
     <string name="button_ligar">Chamar</string>
     <string name="call_error">Não foi possível iniciar telefone</string>
+    <string name="topbar_title_agendamento">Detalhes agendamento</string>
+    <string name="topbar_title_add">Novo agendamento</string>
+    <string name="title_date_picker">Selecione a data</string>
 </resources>
