@@ -30,6 +30,8 @@ class DetalhesAgendamentoActivity : AppCompatActivity() {
         configuraButtonNavigation()
         configuraCamposTexto(position)
         configuraActivityButtons()
+
+
     }
 
     private fun configuraActivityButtons() {

@@ -49,7 +49,7 @@ class AdicionaAgendamentoActivity : AppCompatActivity() {
         binding.topAppBarAdd.setNavigationOnClickListener {
             finish()
         }
-        
+
         binding.buttonPickDate.setOnClickListener {
             dateRangePicker.show(supportFragmentManager, "tagDate")
         }
@@ -65,6 +65,11 @@ class AdicionaAgendamentoActivity : AppCompatActivity() {
         }
 
         binding.buttonAdicionarAgendamento.setOnClickListener {
+
+            if (binding.cbAddAgenda.isChecked) {
+                //TODO adicionar na agenda do google.
+            }
+
             adicionaViewModel.salvarAgendamento(
                 Loja(
                     0,

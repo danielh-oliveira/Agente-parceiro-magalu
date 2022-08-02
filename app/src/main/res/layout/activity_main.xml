@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:text="Olá, nome sobrenome"
-        android:textSize="14sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/ivLogo"
         app:layout_constraintStart_toEndOf="@+id/ivLogo"

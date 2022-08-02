@@ -24,11 +24,13 @@
     <string name="filtro">Filtrar visitas</string>
     <string name="content_description_filtro">Filtra todas as visitas</string>
     <string name="content_description_mapa">Mapa com o endereço do local</string>
-    <string name="button_checklist">Abrir checklist</string>
+    <string name="button_checklist">Checklist</string>
     <string name="button_deletar">Deletar</string>
     <string name="button_ligar">Chamar</string>
     <string name="call_error">Não foi possível iniciar telefone</string>
     <string name="topbar_title_agendamento">Detalhes agendamento</string>
     <string name="topbar_title_add">Novo agendamento</string>
     <string name="title_date_picker">Selecione a data</string>
+    <string name="cb_add_agenda">Adicionar na agenda</string>
+    <string name="button_salvar">Salvar</string>
 </resources>

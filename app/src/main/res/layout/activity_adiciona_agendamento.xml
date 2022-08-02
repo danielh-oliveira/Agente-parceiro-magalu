@@ -163,6 +163,18 @@
                     android:inputType="textMultiLine" />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <CheckBox
+                android:id="@+id/cb_add_agenda"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:checked="true"
+                android:text="@string/cb_add_agenda"
+                android:textSize="16sp"
+                app:buttonTint="@color/teal_700"
+                app:layout_constraintStart_toStartOf="@id/tf_observacao_agendamento"
+                app:layout_constraintTop_toBottomOf="@id/tf_observacao_agendamento" />
+
             <Button
                 android:id="@+id/button_adicionar_agendamento"
                 android:layout_width="wrap_content"
@@ -170,10 +182,10 @@
                 android:layout_margin="25dp"
                 android:paddingHorizontal="35dp"
                 android:paddingVertical="15dp"
-                android:text="Salvar"
+                android:text="@string/button_salvar"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tf_observacao_agendamento" />
+                app:layout_constraintTop_toBottomOf="@id/cb_add_agenda" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
